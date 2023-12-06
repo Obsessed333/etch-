@@ -7,15 +7,22 @@
         document.body.appendChild(gridContainer);
         
         function createDivs(num){
-
-            for(let i=  0; i < num; i++){
+            gridContainer.innerHTML = '';
+            const gridSize = 400;
+            const squareSize = gridSize / num;
+            
+            
+            for(let i=  0; i < num * num; i++){
 
                 const grid =document.createElement('div');
                 grid.classList.add('grid');
+                grid.style.width = `${squareSize}px` ;
+                grid.style.height = `${squareSize}px ` ;
                 gridContainer.appendChild(grid);
                 
 
             }
+            
 
 
         }
@@ -32,7 +39,9 @@
 
                 alert('Enter a number smaller than 100')
                 
-            } 
+            }
+            
+            
             createDivs(num);
 
 
