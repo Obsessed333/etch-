@@ -12,9 +12,7 @@ body{
     
 }
 
-.grid:hover{
-    background-color: goldenrod;
-}
+
 
 .container{
     height: 400px;

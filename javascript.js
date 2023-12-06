@@ -1,6 +1,6 @@
         const gridContainer = document.createElement('div');
         const divBtn = document.createElement('button');
-        divBtn.textContent ='Click me!!'
+        divBtn.textContent ='Select Size'
         gridContainer.classList.add('container');
         divBtn.classList.add('divBtn')
         document.body.appendChild(divBtn);
@@ -10,7 +10,15 @@
             gridContainer.innerHTML = '';
             const gridSize = 400;
             const squareSize = gridSize / num;
-            
+
+            function randomRGB() {
+                var x = Math.floor(Math.random() * 256);
+                var y = Math.floor(Math.random() * 256);
+                var z = Math.floor(Math.random() * 256);
+                var RGBColor = "rgb(" + x + "," + y + "," + z + ")";  
+                return RGBColor;
+              }
+
             
             for(let i=  0; i < num * num; i++){
 
@@ -19,11 +27,14 @@
                 grid.style.width = `${squareSize}px` ;
                 grid.style.height = `${squareSize}px ` ;
                 gridContainer.appendChild(grid);
-                
+                grid.addEventListener('mouseover', function(){
+
+                    grid.style.backgroundColor = randomRGB();
+                });
 
             }
             
-
+           
 
         }
         divBtn.addEventListener('click', function(){
@@ -47,5 +58,8 @@
 
         });
 
+        
+
+        
         console.log(document.body);
        
